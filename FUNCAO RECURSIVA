@@ -1,0 +1,53 @@
+#include <iostream>
+
+int gf_somanum(int a) {
+	
+    int soma = 0;
+    int i = a;
+    int b = a;
+
+    while (i > 1) {
+    	
+    	i = i - 1;
+        soma = a + i;
+        a = soma;
+        
+        if (a == 0) {
+        	
+        	a = 1;
+		}
+		
+		std::cout << b << " + " << i << " = " << soma << std::endl;
+		
+		b = a;
+    }
+
+    return soma;
+}
+
+int main(int argc, char** argv) {
+    int lv_num;
+
+    std::cout << "-------------------" << std::endl;
+    std::cout << "INSIRA UM NUMERO: ";
+    std::cin >> lv_num;
+    std::cout << "-------------------" << std::endl;
+
+    if (lv_num < 0) {
+    	
+        std::cout << "-------------------" << std::endl;
+        std::cout << "DIGITE UM NUMERO POSITIVO" << std::endl;
+        std::cout << "-------------------" << std::endl;
+        
+    } else {
+    	
+        int lf_somanum = gf_somanum(lv_num);
+        
+        std::cout << "-------------------" << std::endl;
+        std::cout << "Resultado: " << lf_somanum << std::endl;
+        std::cout << "-------------------" << std::endl;
+    }
+
+    return 0;
+}
+
